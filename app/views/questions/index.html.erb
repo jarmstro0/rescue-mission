@@ -1,0 +1,5 @@
+<h6>
+<% @questions.each do |quest| %>
+<ul><%= link_to "#{quest.title} #{quest.created_at.strftime('%B %d, %Y')}", question_path(quest) %></ul>
+<% end %>
+</h6>

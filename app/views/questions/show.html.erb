@@ -1,0 +1,16 @@
+<h4><%= @question.title %></h4>
+<p>
+  <%= @question.description %>
+</p>
+
+<% @answers.each do |ans| %>
+<ul><%= ans.answer %></ul>
+<% end %>
+
+<%= link_to "Edit This Question", edit_question_path %>
+
+<%= form_for [@question, @answer] do |f| %>
+<%= f.label :answer %><br/>
+<%= f.text_field :answer %>
+<%= f.submit %>
+<% end %>
